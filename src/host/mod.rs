@@ -19,7 +19,7 @@ pub(crate) mod asio;
 pub(crate) mod audioworklet;
 #[cfg(windows)]
 pub(crate) mod com;
-#[cfg(any(target_os = "macos", target_os = "ios"))]
+#[cfg(target_vendor = "apple")]
 pub(crate) mod coreaudio;
 #[cfg(all(
     feature = "jack",
@@ -66,8 +66,7 @@ pub(crate) mod custom;
     target_os = "dragonfly",
     target_os = "freebsd",
     target_os = "netbsd",
-    target_os = "macos",
-    target_os = "ios",
+    target_vendor = "apple",
     target_os = "android",
     all(target_arch = "wasm32", feature = "wasm-bindgen"),
 )))]

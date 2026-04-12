@@ -811,9 +811,9 @@ mod platform_impl {
     }
 }
 
-#[cfg(any(target_os = "macos", target_os = "ios"))]
+#[cfg(target_vendor = "apple")]
 mod platform_impl {
-    #[cfg_attr(docsrs, doc(cfg(any(target_os = "macos", target_os = "ios"))))]
+    #[cfg_attr(docsrs, doc(cfg(target_vendor = "apple")))]
     pub use crate::host::coreaudio::Host as CoreAudioHost;
     #[cfg(all(feature = "jack", target_os = "macos"))]
     #[cfg_attr(docsrs, doc(cfg(all(feature = "jack", target_os = "macos"))))]
@@ -915,8 +915,7 @@ mod platform_impl {
     target_os = "dragonfly",
     target_os = "freebsd",
     target_os = "netbsd",
-    target_os = "macos",
-    target_os = "ios",
+    target_vendor = "apple",
     target_os = "android",
     all(target_arch = "wasm32", feature = "wasm-bindgen"),
 )))]
@@ -929,8 +928,7 @@ mod platform_impl {
             target_os = "dragonfly",
             target_os = "freebsd",
             target_os = "netbsd",
-            target_os = "macos",
-            target_os = "ios",
+            target_vendor = "apple",
             target_os = "android",
             all(target_arch = "wasm32", feature = "wasm-bindgen")
         ))))

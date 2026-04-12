@@ -11,7 +11,7 @@ The minimum Rust version required depends on which audio backend and features yo
 
 - **AAudio (Android):** Rust **1.85**
 - **ALSA (Linux/BSD):** Rust **1.82**
-- **CoreAudio (macOS/iOS):** Rust **1.80**
+- **CoreAudio (macOS/iOS/tvOS):** Rust **1.85**
 - **JACK (Linux/BSD/macOS/Windows):** Rust **1.82**
 - **PipeWire (Linux/BSD):** Rust **1.85**
 - **PulseAudio (Linux/BSD):** Rust **1.88**

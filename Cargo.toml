@@ -114,7 +114,7 @@ futures = { version = "0.3", optional = true }
 pipewire = { version = "0.9", optional = true, features = ["v0_3_53"] }
 
 [target.'cfg(target_vendor = "apple")'.dependencies]
-mach2 = "0.5"
+mach2 = "0.6"
 coreaudio-rs = { version = "0.14", default-features = false, features = [
     "core_audio",
     "audio_toolbox",
@@ -147,7 +147,7 @@ objc2 = { version = "0.6" }
 [target.'cfg(target_os = "macos")'.dependencies]
 jack = { version = "0.13", optional = true }
 
-[target.'cfg(target_os = "ios")'.dependencies]
+[target.'cfg(any(target_os = "ios", target_os = "tvos"))'.dependencies]
 block2 = "0.6"
 objc2-foundation = { version = "0.3", features = [
     "block2",

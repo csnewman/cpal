@@ -12,12 +12,12 @@ use crate::{BuildStreamError, SupportedStreamConfigsError};
 
 use crate::{BackendSpecificError, SampleFormat, StreamConfig};
 
-#[cfg(target_os = "ios")]
+#[cfg(not(target_os = "macos"))]
 mod ios;
 #[cfg(target_os = "macos")]
 mod macos;
 
-#[cfg(target_os = "ios")]
+#[cfg(not(target_os = "macos"))]
 #[allow(unused_imports)]
 pub use self::ios::{
     enumerate::{Devices, SupportedInputConfigs, SupportedOutputConfigs},
