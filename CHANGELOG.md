@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   backends to override it.
 - `StreamTrait::now()` to query the current instant on the stream's clock.
 - **ALSA**: `device_by_id()` now accepts PCM shorthand names such as `hw:0,0` and `plughw:foo`.
+- **CoreAudio**: tvOS target support (Tier 3, requires nightly).
 - **PipeWire**: New host for Linux and some BSDs using the PipeWire API.
 - **PulseAudio**: New host for Linux and some BSDs using the PulseAudio API.
 
@@ -50,6 +51,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **ASIO**: Stream error callback now receives `StreamError::StreamInvalidated` when the driver
   reports a sample rate change (`sampleRateDidChange`) of 1 Hz or more from the configured rate.
 - **AudioWorklet**: `BufferSize::Fixed` now sets `renderSizeHint` on the `AudioContext`.
+- **CoreAudio**: Bump MSRV to 1.85.
+- **CoreAudio**: Bump `mach2` to 0.6 (uses `core::ffi` instead of `libc`, enables tvOS builds).
 - **CoreAudio**: Timestamps now include device latency and safety offset.
 - **CoreAudio**: Poisoned stream mutex in stream functions now propagate panics.
 - **CoreAudio**: Physical stream format is now set directly on the hardware device.
